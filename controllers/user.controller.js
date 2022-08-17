@@ -10,7 +10,7 @@ router.route('/post').post((req, res) => {
         .catch(err => res.status(400).json("Error! " + err))
 })
 
-router.route('/get').get((req, res) => {
+router.route('/get').post((req, res) => {
     // using .find() without a paramter will match on all user instances
     User.findOne({username:req.body.username, password:req.body.password})
         .then(result => res.json(result))
