@@ -8,7 +8,7 @@ app.use(cors())
 
 // app will serve and receive data in a JSON format
 app.use(express.json())
-
+app.use(allowCrossDomain)
 // the messenger between our app and our database
 const mongoose = require('mongoose')
 
